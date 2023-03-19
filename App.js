@@ -1,20 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { useFonts } from 'expo-font';
+
+import RootNavigation from './navigation/index.js';
+import {chivo} from './styles/font.js';
 
 export default function App() {
+  // Import custom fonts
+  // Reload the app whem modifiying
+  const [loaded] = useFonts({
+    'chivo-regular': require('./assets/fonts/chivo/Chivo-Regular.ttf'),
+    'chivo': require('./assets/fonts/chivo/Chivo-Bold.ttf'),
+    'chivo-black': require('./assets/fonts/chivo/Chivo-Black.ttf'),
+  });
+
+  if (!loaded) {
+    return null;
+  }
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <RootNavigation/>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

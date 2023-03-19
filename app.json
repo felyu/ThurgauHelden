@@ -12,10 +12,16 @@
       "backgroundColor": "#ffffff"
     },
     "assetBundlePatterns": [
-      "**/*"
+      "**/*",
+      "assets/fonts/chivo/*.ttf",
+      "assets/img/*.png"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier" : "app.vilis.vilis",
+      "config": {
+        "googleMapsApiKey" : "AIzaSyBSyqmZF28ZEpI-H9NXvxmffra5Gm_qx6E"
+      }
     },
     "android": {
       "adaptiveIcon": {
